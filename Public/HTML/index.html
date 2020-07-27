@@ -13,13 +13,44 @@
     <title>Jquery Game</title>
   </head>
   <body>
-    <div class="container justify-content-center">
+
+    <div id="popup-tutorial" class="popup-desativado">
+        <div class="py-5" >
+            <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                <h1>Tutorial</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-3">
+                <p>Como jogar:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-3">
+                <p>Escolhendo a dificuldade:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-3">
+                <p>Desafios:</p>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center"><a id="close-popup-tutorial" class="btn btn-success" href="#" ><i class="fa fa-window-close"></i>&nbsp;Entendi! </a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-div" class="container justify-content-center">
         <div class="py-4">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <h1 class="display-2 text-center">Jquery Game</h1> 
-                <button class="botao-info"> <i id="icone-info"class="fa fa-info-circle"></i> </button>
+                <button id="btn-tutorial" class="botao-info"> <i id="icone-info"class="fa fa-info-circle"></i> </button>
                 <span class="popup-info">Como jogar</span>
               </div>
             </div>
@@ -29,6 +60,7 @@
                 <p class="text-justify">Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea.</p>
               </div>
             </div>
+
           </div>
         </div>
         <div class="py-3 text-center">
@@ -63,5 +95,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="../Javascript/main.js"></script>
   </body>
 </html>
