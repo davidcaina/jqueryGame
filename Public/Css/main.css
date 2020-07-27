@@ -25,6 +25,21 @@ h1{
     cursor: pointer;
 }
 
+.difficulty-level{
+    display: inline-block;
+    width: 50px;
+    height: 150px;
+    padding: 0;
+}
+
+.difficulty-level input{
+    position: relative;
+    bottom: 90px;
+    left: 900px;
+    width: 100px;
+    transform: rotate(-90deg);
+}
+
 .popup-info{
     visibility: hidden;
     position: relative;

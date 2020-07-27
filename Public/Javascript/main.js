@@ -28,7 +28,6 @@ function fechaPopupTutorial(){
         var container = $("#popup-tutorial");
         
         if(!container.hasClass("popup-desativado")){
-
             if ((!container.is(e.target) && container.has(e.target).length === 0)){
                 $("#popup-tutorial").toggleClass("popup-desativado");
                 $("#main-div").toggleClass("custom-blur");
