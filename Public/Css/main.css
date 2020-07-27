@@ -11,6 +11,107 @@ h1{
     margin-bottom: 40px;
 }
 
+#icone-palavra{
+    position: relative;
+    top: 28px;
+    left: -70px;
+}
+
+#icone-tempo{
+    position: relative;
+    top: 20px;
+    left: -70px;
+}
+
+#areaDigitacao{
+    margin-top: 20px;
+}
+
+#areaDigitacao{
+    font-size: 20px;
+    border: 3px solid black;
+}
+
+#div-texto{
+    top: 22px;
+}
+
+/* ================= DIFFICULTY CSS AREA =================*/
+.difficulty-level{
+    display: inline-block;
+    width: 60px;
+    height: 180px;
+    padding: 0;
+}
+
+.difficulty-level input{
+    position: relative;
+    bottom: 75px;
+    left: 875px;
+    width: 145px;
+    transform: rotate(-90deg);
+}
+
+#difficulty-level-range{
+    background-color: blueviolet;
+}
+
+#label-extremo{
+    position: relative;
+    bottom: 165px;
+    left: 965px;
+}
+
+#label-dificil{
+    position: relative;
+    bottom: 155px;
+    left: 965px;
+}
+
+#label-medio{
+    position: relative;
+    bottom: 145px;
+    left: 965px;
+}
+
+#label-facil{
+    position: relative;
+    bottom: 135px;
+    left: 965px;
+}
+
+.selected-facil{
+    background-color: green;
+    padding: 2px;
+    border-radius: 3px;
+    color: white;
+}
+
+.selected-medio{
+    background-color: darkorange;
+    padding: 2px;
+    border-radius: 3px;
+    color: white;
+}
+
+.selected-dificil{
+    background-color: crimson;
+    padding: 2px;
+    border-radius: 3px;
+    color: white;
+}
+
+.selected-extremo{
+    background-color: darkred;
+    padding: 2px;
+    border-radius: 3px;
+    color: white;
+}
+/*===========================================================*/
+
+
+/* ================= INFO POPUP INFO ======================*/
+
 .botao-info {
     position: relative;
     bottom: 120px;
@@ -23,21 +124,6 @@ h1{
     font-size: 16px;
     border-radius: 50%;
     cursor: pointer;
-}
-
-.difficulty-level{
-    display: inline-block;
-    width: 50px;
-    height: 150px;
-    padding: 0;
-}
-
-.difficulty-level input{
-    position: relative;
-    bottom: 90px;
-    left: 900px;
-    width: 100px;
-    transform: rotate(-90deg);
 }
 
 .popup-info{
@@ -61,27 +147,9 @@ h1{
 #icone-info:hover{
     background-color: RoyalBlue;
 }
+/*===========================================================*/
 
-#icone-palavra{
-    position: relative;
-    top: 22px;
-    left: -70px;
-}
-
-#icone-tempo{
-    position: relative;
-    top: 22px;
-    left: -70px;
-}
-
-#areaDigitacao{
-    margin-top: 20px;
-}
-
-#areaDigitacao{
-    font-size: 20px;
-    border: 3px solid black;
-}
+/* ===================== TUTORIAL POPUP ======================*/
 
 #popup-tutorial{
     position: fixed;
@@ -109,3 +177,7 @@ h1{
     visibility: hidden;
     opacity: 0;
 }
+
+/*===========================================================*/
+
+

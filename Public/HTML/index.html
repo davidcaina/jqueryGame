@@ -7,8 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../Css/main.css">
+    <link rel="stylesheet" type="text/css" href="../Css/fontawesome-free/css/all.css">
 
     <title>Jquery Game</title>
   </head>
@@ -54,10 +55,14 @@
                 <span class="popup-info">Como jogar</span>
               </div>
               <div class="difficulty-level">
-                  <input type="range" min="0" max="4" value="1" step="1">
+                  <input id="difficulty-level-range"type="range" min="2" max="8" value="2" step="2">
+                  <label id="label-extremo" class=""for="difficulty-level-range"> Extremo </label>
+                  <label id="label-dificil" class="" for="difficulty-level-range"> Dificil</label>
+                  <label id="label-medio" class="" for="difficulty-level-range"> Médio</label>
+                  <label id="label-facil" class="selected-facil" for="difficulty-level-range"> Fácil</label>                  
               </div>
             </div>
-            <div class="row justify-content-center">
+            <div id="div-texto" class="row justify-content-center">
               <div class="col-lg-8 col-md-12 p-4 center">
                 <h4 class="text-center"><b>Texto</b></h4>
                 <p class="text-justify">Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea Isso é um texto para ser redigito dentro da textarea.</p>

@@ -11,6 +11,7 @@ var campo = $(".campo-digitacao");
 $(function() {
     abrePopupTutorial();
     fechaPopupTutorial();
+    changeInputRangeColor();
 });
 
 function abrePopupTutorial(){
@@ -39,4 +40,35 @@ function fechaPopupTutorial(){
             });
         }
     });
+}
+
+function changeInputRangeColor(){
+    $("#difficulty-level-range").click(function(){
+        var currentValue = $(this).val();
+        console.log(currentValue);
+        if(currentValue == 2){ 
+            $("#label-facil").addClass("selected-facil");
+            $("#label-medio").removeClass("selected-medio");
+            $("#label-dificil").removeClass("selected-dificil");
+            $("#label-extremo").removeClass("selected-extremo");
+        }
+        else if(currentValue == 4){
+            $("#label-facil").removeClass("selected-facil");
+            $("#label-medio").addClass("selected-medio");
+            $("#label-dificil").removeClass("selected-dificil");
+            $("#label-extremo").removeClass("selected-extremo");
+        }
+        else if(currentValue == 6){
+            $("#label-facil").removeClass("selected-facil");
+            $("#label-medio").removeClass("selected-medio");
+            $("#label-dificil").addClass("selected-dificil");
+            $("#label-extremo").removeClass("selected-extremo");
+        }
+        else if(currentValue == 8){
+            $("#label-facil").removeClass("selected-facil");
+            $("#label-medio").removeClass("selected-medio");
+            $("#label-dificil").removeClass("selected-dificil");
+            $("#label-extremo").addClass("selected-extremo");
+        }
+    });  
 }
