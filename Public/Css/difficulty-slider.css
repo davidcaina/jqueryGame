@@ -1,12 +1,5 @@
 
 #difficulty-level-range{
-    /*
-    background: linear-gradient(to right, #123 0%, #123 50%, #fff 50%, #fff 100%);
-    
-    
-    outline: none;
-    
-    */
     transition: background 450ms ease-in;
     border-radius: 10px;
     border: solid 0.01em #123;

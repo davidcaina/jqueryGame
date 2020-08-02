@@ -31,3 +31,72 @@ h1{
     font-size: 20px;
     border: 3px solid black;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltiptexta {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+   .tooltiptexta::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+   .tooltiptexta:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+
+/* Primeira letra maiscula*/
+.texto-firstMaiscula{
+    color: aqua;
+    font-weight: bold;
+}
+
+/* Toda palavra maiscula*/
+.texto-fullMaiscula{
+    color: gold;
+    font-weight: bold;
+}
+
+/* Ultima letra maiscula*/
+.texto-lastMaiscula{
+    color: blue;
+    font-weight: bold;
+}
+
+/*Palavra 2x*/
+.texto-double{
+    color: indigo;
+    font-weight: bold;
+}
+
+/* Inverso */
+.texto-inverse{
+    color: maroon;
+    font-weight: bold;
+}

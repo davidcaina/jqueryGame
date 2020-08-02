@@ -2,16 +2,11 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
-
-
-// Main Functions:
-
-// Init Function
-
 $(function() {
     abrePopupTutorial();
     fechaPopupTutorial();
     changeInputRangeColor();
+    changeTextWords();
 });
 
 function abrePopupTutorial(){
@@ -77,14 +72,15 @@ $(document).on('input', "#difficulty-level-range", function () {
     if(this.value == 2){ 
         currentColor = 'linear-gradient(to right, #008000 0%, #008000 ' + (this.value-this.min)/(this.max-this.min)*100 + '%, #fff ' + this.value + '%, white 100%)';
     }
-    if(this.value == 4){ 
+    else if(this.value == 4){ 
         currentColor = 'linear-gradient(to right, #FF9100 0%, #FF9100 ' + (this.value-this.min)/(this.max-this.min)*100 + '%, #fff ' + this.value + '%, white 100%)';
     }
-    if(this.value == 6){ 
+    else if(this.value == 6){ 
         currentColor = 'linear-gradient(to right, #C8143C 0%, #C8143C ' + (this.value-this.min)/(this.max-this.min)*100 + '%, #fff ' + this.value + '%, white 100%)';
     }
-    if(this.value == 8){ 
+    else if(this.value == 8){ 
         currentColor = 'linear-gradient(to right, #8B0000 0%, #8B0000 ' + (this.value-this.min)/(this.max-this.min)*100 + '%, #fff ' + this.value + '%, white 100%)';
     }
     this.style.background = currentColor;
 });
+
