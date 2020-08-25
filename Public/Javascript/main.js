@@ -1,6 +1,6 @@
 // Global variables:
-var tempoInicial = $("#tempo-digitacao").text();
-var campo = $(".campo-digitacao");
+var areaDigitacao = $("#areaDigitacao");
+var intervals = [];
 
 
 /*
@@ -11,6 +11,7 @@ $(function() {
     fechaPopupTutorial();
     changeInputRangeColor();
     changeTextWords();
+    $("#botao-reiniciar").click(reiniciaJogo); 
 });
 
 
@@ -105,3 +106,58 @@ $(document).on('input', "#difficulty-level-range", function () {
     this.style.background = currentColor;
 });
 
+
+/*
+Função responsavel por travar o campo de digitação após o tempo acabar.
+*/
+function finalizaJogo() {
+    areaDigitacao.attr("disabled", true);
+    areaDigitacao.toggleClass("campo-desativado");
+    //inserePlacar();
+}
+
+/*
+Função responsavel por reiniciar o jogo.
+*/
+function reiniciaJogo() {
+    areaDigitacao.attr("disabled", false);
+    areaDigitacao.val("");
+    cleanIntervals();
+    inicializaCronometro();
+    if(areaDigitacao.hasClass("campo-desativado")){
+        areaDigitacao.removeClass("campo-desativado");
+    }
+    //areaDigitacao.removeClass("borda-vermelha");
+    //areaDigitacao.removeClass("borda-verde");
+}
+
+
+/*
+Função responsavel por iniciar o cronometro do jogo ao começar a digitar
+*/
+function inicializaCronometro() {
+    var tempoRestante = $("#tempoRestante").text();
+    areaDigitacao.one("focus", function() {
+        cleanIntervals();
+    	var cronometroID = setInterval(function() {
+    		tempoRestante--;
+    		$("#tempoRestante").text(tempoRestante);
+    		if (tempoRestante < 1) {
+                clearInterval(cronometroID);
+                finalizaJogo();
+    		}
+        }, 1000);
+        intervals.push(cronometroID);
+    });
+}
+
+
+/*
+Função responsavel por limpar os intarvalos atuais.
+*/
+function cleanIntervals(){
+    if(intervals.length > 0){
+        clearInterval(intervals[0]);
+        intervals.splice(0, 1);
+    }
+}

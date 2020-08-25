@@ -100,3 +100,15 @@ h1{
     color: maroon;
     font-weight: bold;
 }
+
+/* Botões */
+.botoes{
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    transform: translateX(130px);
+}
+
+.campo-desativado {
+    background-color: lightgray;
+}
