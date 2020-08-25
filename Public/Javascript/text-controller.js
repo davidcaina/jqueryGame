@@ -1,37 +1,60 @@
+
+/*
+On page loading
+*/
 $(function() {
-    //changeTextWords();
+    $("#texto-digitar").load('/Files/text/facil/facil.txt', function(text) {
+        $(this).html(text);
+        atualizaTamanhoFrase();
+    });
+
     $('[data-toggle="tooltip"]').tooltip({
         top: - 50, 
 		left: 20
     }).fadeIn();
 });
 
+
+/*
+Função responsavel por carregar os textos baseado na dificuldade selecionada.
+*/
 $(document).on('input', "#difficulty-level-range", function () { 
     if(this.value == 2){
 
         $("#texto-digitar").load('/Files/text/facil/facil.txt', function(text) {
             $(this).html(text);
+            verifySpecialWords();
+            atualizaTamanhoFrase();
         });
     }
     else if(this.value == 4){
         $("#texto-digitar").load('/Files/text/medio/medio.txt', function(text) {
             $(this).html(text);
+            verifySpecialWords();
+            atualizaTamanhoFrase();
         });
     }
     else if(this.value == 6){
         $("#texto-digitar").load('/Files/text/dificil/dificil.txt', function(text) {
             $(this).html(text);
+            verifySpecialWords();
+            atualizaTamanhoFrase();
         });
     }
     else if(this.value == 8){
         $("#texto-digitar").load('/Files/text/extremo/extremo.txt', function(text) {
             $(this).html(text);
+            verifySpecialWords();
+            atualizaTamanhoFrase();
         });
     }
 });
 
-$(document).on('DOMSubtreeModified', "#texto-digitar", function () {
 
+/*
+Função responsavel por realizar a alteração das cores para as palavras especiais.
+*/
+ function verifySpecialWords(){
     var texto = $("#texto-digitar").html();
     palavrasDoTexto = texto.trim().split(/[\s,]+/);
     for(i = 0; i < palavrasDoTexto.length; i++){
@@ -68,9 +91,12 @@ $(document).on('DOMSubtreeModified', "#texto-digitar", function () {
         }
     }
     $("#texto-digitar").html(texto);
- });
+ }
 
 
+/*
+Função responsavel por realizar a alteração das palavras baseado nos textos armazenados.
+*/
 function changeTextWords(){
     var texto = $("#texto-digitar").html();
     palavrasDoTexto = texto.trim().split(/[\s,]+/);
@@ -78,7 +104,6 @@ function changeTextWords(){
         
         var currentText = palavrasDoTexto[i];
         if(currentText.startsWith("{!")){ // escrever primeira letra maiscula.
-            console.log('encontrou********');
             var currentIndex = texto.indexOf("{!");
             var currentLenght = currentText.length;
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-firstMaiscula\"> teste1 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
@@ -108,7 +133,15 @@ function changeTextWords(){
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-inverse\">teste5 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
     }
-
-    console.log('Novo texto:' + texto);
     $("#texto-digitar").html(texto);
+}
+
+
+/*
+Função responsavel por realizar a alteração do numeros de palavras atuais.
+*/
+function atualizaTamanhoFrase() {
+    var texto = $("#texto-digitar").text();
+    var numPalavras  = texto.split(" ").length;
+    $("#h5Palavra").text(numPalavras + ' palavras');
 }

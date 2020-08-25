@@ -2,6 +2,10 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
+
+/*
+On page loading.
+*/
 $(function() {
     abrePopupTutorial();
     fechaPopupTutorial();
@@ -9,6 +13,11 @@ $(function() {
     changeTextWords();
 });
 
+
+
+/*
+Função responsavel por realizar a abertura do pop-up de tutorial.
+*/
 function abrePopupTutorial(){
 
     $("#btn-tutorial").click(function(){
@@ -17,6 +26,10 @@ function abrePopupTutorial(){
     });
 }
 
+
+/*
+Função responsavel por realizar o fechamento do pop-up de tutorial.
+*/
 function fechaPopupTutorial(){
     $(document).mouseup(function(e){
 
@@ -36,6 +49,10 @@ function fechaPopupTutorial(){
     });
 }
 
+
+/*
+Função responsavel por realizar a alteração das cores no quadro de dificuldades.
+*/
 function changeInputRangeColor(){
     $("#difficulty-level-range").click(function(){
         var currentValue = $(this).val();
@@ -66,6 +83,10 @@ function changeInputRangeColor(){
     });  
 }
 
+
+/*
+Função responsavel por realizar 'ouvir' e realizar a mudança da cor do range do painel de dificuldade.
+*/
 $(document).on('input', "#difficulty-level-range", function () { 
     var currentColor = 'linear-gradient(to right, #008000 0%, #008000 ' + (this.value-this.min)/(this.max-this.min)*100 + '%, #fff ' + this.value + '%, white 100%)';
     
