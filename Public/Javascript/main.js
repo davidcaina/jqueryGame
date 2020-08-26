@@ -11,7 +11,9 @@ $(function() {
     fechaPopupTutorial();
     changeInputRangeColor();
     changeTextWords();
-    $("#botao-reiniciar").click(reiniciaJogo); 
+    inicializaMarcadores();
+    inicializaContadores();
+    $("#botao-reiniciar").click(reiniciaJogo);
 });
 
 
@@ -113,7 +115,7 @@ Função responsavel por travar o campo de digitação após o tempo acabar.
 function finalizaJogo() {
     areaDigitacao.attr("disabled", true);
     areaDigitacao.toggleClass("campo-desativado");
-    //inserePlacar();
+    inserePlacar();
 }
 
 /*
@@ -123,12 +125,36 @@ function reiniciaJogo() {
     areaDigitacao.attr("disabled", false);
     areaDigitacao.val("");
     cleanIntervals();
+    atualizaCronometro();
     inicializaCronometro();
     if(areaDigitacao.hasClass("campo-desativado")){
         areaDigitacao.removeClass("campo-desativado");
     }
-    //areaDigitacao.removeClass("borda-vermelha");
-    //areaDigitacao.removeClass("borda-verde");
+    areaDigitacao.removeClass("borda-vermelha");
+    areaDigitacao.removeClass("borda-verde");
+}
+
+
+/*
+Função responsavel por realizar a alteração do tempo baseado na dificuldade escolhida.
+*/
+function atualizaCronometro() {
+    
+    var currentValue = $("#difficulty-level-range").value;
+    console.log("Valor: " + currentValue);
+    
+    if(currentValue == 2 || currentValue == undefined){
+        $("#tempoRestante").text(10);
+    }
+    else if(this.value == 4){
+        $("#tempoRestante").text(20);
+    }
+    else if(this.value == 6){
+        $("#tempoRestante").text(30);
+    }
+    else if(this.value == 8){
+        $("#tempoRestante").text(35);
+    }  
 }
 
 
@@ -140,7 +166,7 @@ function inicializaCronometro() {
     areaDigitacao.one("focus", function() {
         cleanIntervals();
     	var cronometroID = setInterval(function() {
-    		tempoRestante--;
+    		//tempoRestante--;
     		$("#tempoRestante").text(tempoRestante);
     		if (tempoRestante < 1) {
                 clearInterval(cronometroID);
@@ -160,4 +186,40 @@ function cleanIntervals(){
         clearInterval(intervals[0]);
         intervals.splice(0, 1);
     }
+}
+
+
+/*
+Função responsavel por verificar o texto digitado.
+*/
+function inicializaMarcadores() {
+    var frase = $("#texto-digitar").text().replace(/(\r\n|\n|\r)/gm, " ");
+    areaDigitacao.on("input", function() {
+        var digitado = areaDigitacao.val();
+        var comparavel = frase.substr(0, digitado.length);
+
+        if (digitado == comparavel) {
+            areaDigitacao.addClass("borda-verde");
+            areaDigitacao.removeClass("borda-vermelha");
+        } else {
+            areaDigitacao.addClass("borda-vermelha");
+            areaDigitacao.removeClass("borda-verde");
+        }
+    });
+}
+
+function inicializaContadores() {
+    areaDigitacao.on("input", function() {
+
+        var digitado = areaDigitacao.val();
+        
+        var numPalavras = digitado.split(/\S+/).length - 1;
+        var numCaracters = digitado.length;
+
+        console.log("Caracs: " + numCaracters);
+        console.log("Palvras : " + numPalavras);
+        
+        $("#area_numeroCaracteres").text(numCaracters + 'caracteres');        
+        $("#area_numeroPalavras").text(numPalavras + 'palavras');
+    });
 }

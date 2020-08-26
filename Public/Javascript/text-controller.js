@@ -7,14 +7,16 @@ $(function() {
     $("#texto-digitar").load('/Files/text/facil/facil.txt', function(text) {
         $(this).html(text);
         atualizaTamanhoFrase();
-        atualizaCronometro(10);
-        inicializaCronometro();
+        inicializaMarcadores();
     });
 
     $('[data-toggle="tooltip"]').tooltip({
         top: - 50, 
 		left: 20
     }).fadeIn();
+
+    reiniciaJogo();
+    $("#botao-reiniciar").click(reiniciaJogo);
 });
 
 
@@ -29,8 +31,7 @@ $(document).on('input', "#difficulty-level-range", function () {
             verifySpecialWords();
             atualizaTamanhoFrase();
             reiniciaJogo();
-            atualizaCronometro(10);
-            inicializaCronometro();
+            inicializaMarcadores();
         });
     }
     else if(this.value == 4){
@@ -39,8 +40,7 @@ $(document).on('input', "#difficulty-level-range", function () {
             verifySpecialWords();
             atualizaTamanhoFrase();
             reiniciaJogo();
-            atualizaCronometro(20);
-            inicializaCronometro();
+            inicializaMarcadores();
         });
     }
     else if(this.value == 6){
@@ -48,8 +48,7 @@ $(document).on('input', "#difficulty-level-range", function () {
             $(this).html(text);
             verifySpecialWords();
             atualizaTamanhoFrase();
-            atualizaCronometro(30);
-            inicializaCronometro();
+            inicializaMarcadores();
         });
     }
     else if(this.value == 8){
@@ -57,8 +56,7 @@ $(document).on('input', "#difficulty-level-range", function () {
             $(this).html(text);
             verifySpecialWords();
             atualizaTamanhoFrase();
-            atualizaCronometro(35);
-            inicializaCronometro();
+            inicializaMarcadores();
         });
     }
 });
@@ -158,16 +156,5 @@ function atualizaTamanhoFrase() {
     var numPalavras  = texto.split(" ").length;
     $("#h5Palavra").text(numPalavras + ' palavras');
 }
-
-
-/*
-Função responsavel por realizar a alteração do tempo baseado na dificuldade escolhida.
-*/
-function atualizaCronometro(tempo) {
-    $("#tempoRestante").text(tempo);
-}
-
-
-
 
 

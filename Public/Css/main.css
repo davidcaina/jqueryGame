@@ -32,6 +32,10 @@ h1{
     border: 3px solid black;
 }
 
+#div-texto{
+    margin-top: -150px;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -111,4 +115,23 @@ h1{
 
 .campo-desativado {
     background-color: lightgray;
+}
+
+.borda-verde {
+    outline: none !important;
+    border-color: green;
+    box-shadow: 0 0 10px green;
+}
+
+.borda-vermelha {
+    outline: none !important;
+    border-color: red;
+    box-shadow: 0 0 10px red;
+}
+
+#area_numeroCaracteres #area_numeroPalavras{
+    background-color:#000; 
+  width:150px; 
+  height:50px; 
+  display: block;
 }
