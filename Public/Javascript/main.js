@@ -198,6 +198,9 @@ function inicializaMarcadores() {
         var digitado = areaDigitacao.val();
         var comparavel = frase.substr(0, digitado.length);
 
+        console.log("digitado:" + digitado);
+        console.log("comparavel: "+ comparavel);
+
         if (digitado == comparavel) {
             areaDigitacao.addClass("borda-verde");
             areaDigitacao.removeClass("borda-vermelha");
@@ -216,10 +219,7 @@ function inicializaContadores() {
         var numPalavras = digitado.split(/\S+/).length - 1;
         var numCaracters = digitado.length;
 
-        console.log("Caracs: " + numCaracters);
-        console.log("Palvras : " + numPalavras);
-        
-        $("#area_numeroCaracteres").text(numCaracters + 'caracteres');        
-        $("#area_numeroPalavras").text(numPalavras + 'palavras');
+        $("#area_numeroCaracteres").text(numCaracters);
+        $("#area_numeroPalavras").text(numPalavras);
     });
 }

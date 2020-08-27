@@ -1,11 +1,11 @@
 #popup-tutorial{
     position: fixed;
-    top: 40%;
-    transform: translate(110%, -50%);
+    top: 50%;
+    transform: translate(50%, -50%);
     z-index: 10;
     box-shadow: 0 5px 30px rgba(0,0,0, .30);
     background: #fff;
-    width: 600px;
+    width: 1000px;
     padding: 50px;
     border-radius: 6px;
 }
@@ -59,4 +59,39 @@
 
 #icone-info:hover{
     background-color: RoyalBlue;
+}
+
+.tutorial-titulo{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.tutorial-titulo-subtitulos{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.tutorial-firstMaiscula{
+    color: aqua;
+    font-weight: bold;
+}
+
+.tutorial-fullMaiscula{
+    color: gold;
+    font-weight: bold;
+}
+
+.tutorial-lastMaiscula{
+    color: blue;
+    font-weight: bold;
+}
+
+.tutorial-double{
+    color: indigo;
+    font-weight: bold;
+}
+
+.tutorial-inverse{
+    color: maroon;
+    font-weight: bold;
 }

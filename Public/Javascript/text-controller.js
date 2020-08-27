@@ -4,8 +4,9 @@ var areaDigitacao = $("#areaDigitacao");
 On page loading
 */
 $(function() {
-    $("#texto-digitar").load('/Files/text/facil/facil.txt', function(text) {
+    $("#texto-digitar").load('/Files/text/extremo/extremo.txt', function(text) {
         $(this).html(text);
+        verifySpecialWords();
         atualizaTamanhoFrase();
         inicializaMarcadores();
     });
