@@ -75,30 +75,35 @@ Função responsavel por realizar a alteração das cores para as palavras espec
         if(currentText.startsWith("{!")){ // escrever primeira letra maiscula.
             var currentIndex = texto.indexOf("{!");
             var currentLenght = currentText.length;
-            texto = texto.substring(0, currentIndex) + '<span class=\"texto-firstMaiscula\" href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">'+currentText+ '</span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
+            var newWord = 'teste';
+            texto = texto.substring(0, currentIndex) + '<span class=\"texto-firstMaiscula\" href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">' + newWord + '</span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
         
         else if(currentText.startsWith("{&")){ // escrever toda a palavra maiscula.
             var currentIndex = texto.indexOf("{&");
             var currentLenght = currentText.length;
+            var newWord = 'teste';
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-fullMaiscula\">teste2</span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
 
         else if(currentText.startsWith("{#")){ // escrever a ultima letra maiscula.
             var currentIndex = texto.indexOf("{#");
             var currentLenght = currentText.length;
+            var newWord = 'teste';
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-lastMaiscula\">teste3 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
 
         else if(currentText.startsWith("{@")){ // repetir a palavra duas vezes.
             var currentIndex = texto.indexOf("{@");
             var currentLenght = currentText.length;
+            var newWord = 'teste';
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-double\">teste4 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
 
         else if(currentText.startsWith("{%")){ // escrever palavra inversa.
             var currentIndex = texto.indexOf("{%");
             var currentLenght = currentText.length;
+            var newWord = 'teste';
             texto = texto.substring(0, currentIndex) + '<span class=\"texto-inverse\">teste5 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
     }
