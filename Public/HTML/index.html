@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -18,22 +18,40 @@
             <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                <h1>Tutorial</h1>
+                <h1 class="">Tutorial</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 p-3">
-                <p>Como jogar:</p>
+                  <span class="tutorial-titulo"> Como jogar: </span>
+                  <p class="text-justify">
+                    <br> Jquery Game é um jogo no estilo, do inglês, "typer" onde, o jogador(a),
+                     deve redigir o texto exibido no local indicado. O objetivo é escrever o
+                      maior número de palavras possíveis dentro do tempo fornecido. Ou, se você
+                      for rápido o suficiente, todo o texto (fica o desafio &#128512;).
+                  </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 p-3">
-                <p>Escolhendo a dificuldade:</p>
+                  <span class="tutorial-titulo"> Escolhendo a dificuldade: </span>
+                  <p class="text-justify">
+                    <br> No Jquery Game, é possível escolher a dificuldade do que você, o jogador(a), irá "enfrentar"!
+                     A dificuldade influencia a complexidade, tamanho do texto, tempo fornecido e a adição de desafios.
+                  </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 p-3">
-                <p>Desafios:</p>
+                  <span class="tutorial-titulo-subtitulos"> Desafios: </span>
+                  <p class="text-justify">
+                    <br> Desafios são palavras com propriedades especiais. Elas são indicadas por cores e cada uma tem a sua peculiaridade, como: <br><br>
+                    <span class="tutorial-firstMaiscula">Desafio 1:</span> A primeira letra da palavra maiúscula. <br>
+                    <span class="tutorial-double">Desafio 2:</span> A palavra deve ser escrita duas vezes em sequencia.<br>
+                    <span class="tutorial-fullMaiscula">Desafio 3:</span> Toda a palavra deve ser maiúscula. <br>
+                    <span class="tutorial-inverse">Desafio 4:</span> A palavra deve ser escrita invertida.<br>
+                    <span class="tutorial-lastMaiscula">Desafio 5:</span> A ultima letra da palavra minúscula. <br>
+                  </p>
                 </div>
             </div>
             </div>
@@ -97,13 +115,13 @@
           </ul>
         </div>
         <section class="placar">
-          <h3 class="center">Placar</h3>
-          <table class="centered bordered">
+          <h3 class="text-center">Placar</h3>
+          <table class="text-center table bordered">
               <thead>
                   <tr>
-                      <th>Nome</th>
-                      <th>No. de palavras</th>
-                      <th>Remover</th>
+                      <th scope="col" class="text-center">Nome</th>
+                      <th scope="col" class="text-center">Nº Palavras</th>
+                      <th scope="col" class="text-center">Remover</th>
                   </tr>
               </thead>
               <tbody>

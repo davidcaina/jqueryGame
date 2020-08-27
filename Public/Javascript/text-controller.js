@@ -4,8 +4,9 @@ var areaDigitacao = $("#areaDigitacao");
 On page loading
 */
 $(function() {
-    $("#texto-digitar").load('/Files/text/facil/facil.txt', function(text) {
+    $("#texto-digitar").load('/Files/text/extremo/extremo.txt', function(text) {
         $(this).html(text);
+        verifySpecialWords();
         atualizaTamanhoFrase();
         inicializaMarcadores();
     });
@@ -74,13 +75,13 @@ Função responsavel por realizar a alteração das cores para as palavras espec
         if(currentText.startsWith("{!")){ // escrever primeira letra maiscula.
             var currentIndex = texto.indexOf("{!");
             var currentLenght = currentText.length;
-            texto = texto.substring(0, currentIndex) + '<span class=\"texto-firstMaiscula\" href="#" data-toggle="tooltip" data-placement="top" title="Hooray!"> teste1 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
+            texto = texto.substring(0, currentIndex) + '<span class=\"texto-firstMaiscula\" href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">'+currentText+ '</span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
         
         else if(currentText.startsWith("{&")){ // escrever toda a palavra maiscula.
             var currentIndex = texto.indexOf("{&");
             var currentLenght = currentText.length;
-            texto = texto.substring(0, currentIndex) + '<span class=\"texto-fullMaiscula\">teste2 </span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
+            texto = texto.substring(0, currentIndex) + '<span class=\"texto-fullMaiscula\">teste2</span>' + texto.substring(currentIndex + currentLenght, texto.length-1);
         }
 
         else if(currentText.startsWith("{#")){ // escrever a ultima letra maiscula.
